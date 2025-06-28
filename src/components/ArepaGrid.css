@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid;
+
+  /* Default to 2 columns (small screens) */
+  grid-template-columns: repeat(1, 1fr);
+
+  padding: clamp(1rem, 5vw, 6rem);
+
+  justify-items: center;
+}
+
+/* For medium and up screens, switch to 3 columns */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,82 @@
+.transition-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+  }
+  
+  .vertical-columns {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .col {
+    flex: 1;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+  }
+  
+  .col.left {
+    animation-name: slideDown;
+  }
+  
+  .col.center {
+    animation-name: slideUp;
+  }
+  
+  .col.right {
+    animation-name: slideDown;
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  
+  /* Phase 2 */
+  .horizontal-rows {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .row {
+    flex: 1;
+    background: white;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+  }
+  
+  .row.top {
+    animation-name: exitRight;
+  }
+  
+  .row.middle {
+    animation-name: exitLeft;
+  }
+  
+  .row.bottom {
+    animation-name: exitRight;
+  }
+  
+  @keyframes exitRight {
+    to { transform: translateX(100%); opacity: 0; }
+  }
+  
+  @keyframes exitLeft {
+    to { transform: translateX(-100%); opacity: 0; }
+  }
+  

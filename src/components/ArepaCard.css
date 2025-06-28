@@ -1,0 +1,41 @@
+.image-wrapper {
+  background: url('../assets/star.png') no-repeat center center;
+
+  
+  background-size: contain; /* or contain, depending on your layout */
+  padding: 3rem; /* optional: space around image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.3s ease;
+
+  width: clamp(200px, 20vw, 500px);  /* dynamic based on width */
+  height: clamp(200px, 20vw, 500px); /* keep it square */
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.image {
+    width: 100%;
+    max-width: 500px;  /* sets max size of each image */
+    height: auto;      /* keeps aspect ratio */
+    transition: transform 0.3s ease;
+    margin: 0 auto;    /* centers the image */
+
+
+
+}
+  
+  .image:hover {
+    transform: scale(1.05);
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-4px); }  /* float upward slightly */
+    100% { transform: translateY(0px); }
+  }
+  
