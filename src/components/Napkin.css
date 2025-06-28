@@ -1,63 +1,15 @@
-
 .napkin {
-    background:
-        linear-gradient(rgba(14, 2, 117, 0.8), rgba(14, 2, 117, 0.8)), /* semi-transparent red */
-        url('../assets/napkin.png');
+  /* background: linear-gradient(rgba(14, 2, 117, 0.8), rgba(14, 2, 117, 0.8)),
+    url('../assets/napkin.png'); */
+  background: var(--color-blue);
+  margin: 0 auto;
 
-    
-    margin: 0 auto;
+  height: 200vh; /* full vertical screen height */
+  width: 100%; /* Take full width of container, same as banner */
+  border-radius: 0rem; /* optional: rounded corners for style */
+  box-shadow: 0 0 90px rgba(0, 0, 0, 0.2); /* optional: adds some depth */
+  position: relative; /* useful if adding content inside */
+  overflow: hidden; /* Required for grid animation */
 
-    height: 200vh;        /* full vertical screen height */
-    width: 85.4vw;          /* 80% of viewport width */
-    margin: 0 auto;       /* centers horizontally */
-    border-radius: 0rem;  /* optional: rounded corners for style */
-    box-shadow: 0 0 90px rgba(0,0,0,0.2); /* optional: adds some depth */
-    position: relative;   /* useful if adding content inside */
-    
-    
-    animation-duration: 1.2s;
-    animation-timing-function: ease-out;
-    animation-name: slideUp;
-    animation-delay: s;
-
-
-
+  /* No animation - content should always be visible when revealed */
 }
-
-.napkin-banner{
-    background:
-    linear-gradient(rgba(216, 202, 0, 0.5), rgba(216, 202, 0, 0.5)), /* semi-transparent red */
-    url('../assets/napkin.png');
-
-
-    width: 85.4vw;
-    height: 10vw;
-    margin: 0 auto;
-
-
-    color: #000000;
-    font-size: clamp(2rem, 5vw, 7rem);
-    font-weight: 700;
-    text-align: center;
-    font-family: 'Salsa', cursive;
-    
-    display: flex;
-    align-items: center;     /* centers vertically */
-    justify-content: center; /* centers horizontally */
-
-    
-    animation-duration: 1.2s;
-    animation-timing-function: ease-out;
-    animation-name: slideUp;
-    animation-delay: 0s;
-  
-}
-
-@keyframes slideUp {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }

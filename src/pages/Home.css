@@ -1,74 +1,69 @@
+.home-container {
+  /* background: linear-gradient(rgba(197, 7, 7, 0.65), rgba(197, 7, 7, 0.65)),
+    url('../assets/succo.png'); */
+  background: var(--color-red);
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 
-  
-  .home-container {
-    /* background:
-      url('../assets/succo.png');
-      color: #ac26263d;  */
-    background:
+  display: grid;
+  grid-template-columns: 0fr 10fr 0fr;
+  animation: expandColumns 1s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+}
 
-    linear-gradient(rgba(197, 7, 7, 0.65), rgba(197, 7, 7, 0.65)),
-      url('../assets/succo.png');
-    
-    
-    margin: 0 auto;
-
-    background-attachment: fixed;
-
-    
+@keyframes expandColumns {
+  to {
+    grid-template-columns: 1fr 10fr 1fr;
   }
+}
 
+.left-column,
+.right-column {
+  overflow: hidden;
+}
 
+.main-content {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+}
 
-  
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* background: linear-gradient(rgba(216, 202, 0, 0.5), rgba(216, 202, 0, 0.5)),
+    url('../assets/napkin.png'); */
+  background: var(--color-yellow);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  animation: shrinkBanner 1s cubic-bezier(0.19, 1, 0.22, 1) 1.2s forwards;
+}
 
-
-
-
-  
-  .bodu{
-    padding: 1rem;
+@keyframes shrinkBanner {
+  to {
+    height: 20vh;
   }
+}
 
-  .fixed-hands {
-    position: fixed;
-    top: 10%;              /* distance from top of screen */
-    width: 15vw;           /* 10% of viewport width */
-    height: auto;          /* keep aspect ratio or control via content */
-    z-index: 999;          /* ensure it stays on top */
+.banner-text {
+  color: #000000;
+  font-size: clamp(1.5rem, 3vw, 4rem);
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Salsa', cursive;
+}
 
-
-    animation-fill-mode: forwards;
-    animation-duration: 0;
-    animation-timing-function: ease-in;
-  }
-  
-  /* Subclass: align left */
-  .fixed-hands.left {
-    left: 0vw;
-    animation-name: slideInFromLeft;
-  }
-  
-  /* Subclass: align right */
-  .fixed-hands.right {
-    right: 0vw;
-    animation-name: slideInFromRight;
-  }
-
-
-  @keyframes slideInFromLeft {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slideInFromRight {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
+.content-underneath {
+  padding-top: 20vh;
+  width: 100%;
+  z-index: 1;
+}
