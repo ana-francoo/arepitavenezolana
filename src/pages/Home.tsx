@@ -1,5 +1,7 @@
 import './Home.css';
 import Napkin from '../components/Napkin';
+import manoDer from '../assets/mano_der.png';
+import manoIzq from '../assets/mano_izquierda.png';
 import { useState } from 'react';
 import TransitionScreen from '../components/TransitionScreen';
 
@@ -8,6 +10,9 @@ function Home() {
 
   return (
     <div className="home-container">
+      <img src={manoIzq} className="fixed-hands left" />
+      <img src={manoDer} className="fixed-hands right" />
+
       <div className="left-column"></div>
 
       <div className="main-content">

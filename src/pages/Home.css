@@ -14,7 +14,7 @@
 
 @keyframes expandColumns {
   to {
-    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-columns: 0.82fr 10fr 0.82fr;
   }
 }
 
@@ -55,15 +55,60 @@
 }
 
 .banner-text {
-  color: #000000;
+  color: #191102;
   font-size: clamp(1.5rem, 3vw, 4rem);
-  font-weight: 700;
+  font-weight: 800;
+  font-style: italic;
   text-align: center;
-  font-family: 'Salsa', cursive;
+  font-family: 'PP Editorial New', 'Salsa', cursive;
 }
 
 .content-underneath {
   padding-top: 20vh;
   width: 100%;
   z-index: 1;
+}
+
+.fixed-hands {
+  position: fixed;
+  top: 10%;
+  width: 15vw;
+  height: auto;
+  z-index: 999;
+
+  opacity: 0;
+  filter: blur(4px);
+
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+
+.fixed-hands.left {
+  left: 0;
+  transform: translateX(-40%);
+  animation-name: slideInFromLeft;
+}
+
+.fixed-hands.right {
+  right: 0;
+  transform: translateX(40%);
+  animation-name: slideInFromRight;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes slideInFromRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0px);
+  }
 }
